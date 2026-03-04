@@ -1,0 +1,167 @@
+.benefits {
+  padding: 7rem 0;
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefits__pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(201, 169, 110, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.benefits__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.benefits__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.benefits__title {
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.benefits__title em {
+  font-style: italic;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Grid */
+.benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* Item */
+.benefit-item {
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--border-gold);
+  background: var(--off-white);
+  text-align: center;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gold-gradient-simple);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.benefit-item:hover::before { transform: scaleX(1); }
+
+.benefit-item:hover {
+  border-color: var(--gold-light);
+  box-shadow: var(--shadow-gold);
+}
+
+.benefit-item__icon-wrap {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-item__icon {
+  font-size: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.benefit-item__icon-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-gold);
+  background: var(--gold-pale);
+}
+
+.benefit-item__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+}
+
+.benefit-item__desc {
+  font-size: 0.8rem;
+  line-height: 1.75;
+  color: var(--text-light);
+}
+
+/* CTA Banner */
+.benefits__cta-banner {
+  background: linear-gradient(135deg, #1A1509 0%, #2C2410 50%, #1A1509 100%);
+  padding: 3rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.benefits__cta-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(201, 169, 110, 0.12) 0%, transparent 60%);
+}
+
+.benefits__cta-text {
+  position: relative;
+  z-index: 1;
+}
+
+.benefits__cta-text h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.benefits__cta-text p {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.03em;
+}
+
+.benefits__cta-banner .btn--gold {
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .benefits__grid { grid-template-columns: 1fr 1fr; }
+  .benefits__cta-banner { flex-direction: column; text-align: center; padding: 2.5rem 2rem; }
+}
+
+@media (max-width: 600px) {
+  .benefits__grid { grid-template-columns: 1fr; max-width: 360px; margin-left: auto; margin-right: auto; }
+}

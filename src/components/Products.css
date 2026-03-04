@@ -1,0 +1,250 @@
+.products {
+  padding: 7rem 0;
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.products::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--gold-gradient-simple);
+  opacity: 0.4;
+}
+
+.products__header {
+  max-width: 650px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.products__title {
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.products__title em {
+  font-style: italic;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.products__subtitle {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+/* Grid */
+.products__grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Card */
+.product-card {
+  background: var(--white);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.4s ease;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  box-shadow: var(--shadow-deep), 0 0 0 1px var(--border-gold);
+}
+
+.product-card__badge {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  z-index: 3;
+  background: var(--gold-gradient);
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+}
+
+/* Image area */
+.product-card__image-wrap {
+  height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-card__image-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    color-mix(in srgb, var(--card-accent, #C9A96E) 20%, transparent) 0%,
+    var(--off-white) 70%
+  );
+}
+
+.product-card__img {
+  position: relative;
+  z-index: 1;
+  height: 85%;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-card__img {
+  transform: scale(1.06);
+}
+
+.product-card__img-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 0;
+  padding: 1rem;
+}
+
+.product-card__img-placeholder span {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gold);
+  opacity: 0.4;
+}
+
+/* Body */
+.product-card__body {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-card__tagline {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.product-card__name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+}
+
+.product-card__divider {
+  width: 30px;
+  height: 1.5px;
+  background: var(--gold-gradient-simple);
+  margin-bottom: 1rem;
+}
+
+.product-card__desc {
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--text-light);
+  margin-bottom: 1.4rem;
+  flex: 1;
+}
+
+.product-card__ingredients {
+  margin-bottom: 1.5rem;
+}
+
+.product-card__ingr-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.product-card__ingr-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.product-card__tag {
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: var(--gold-dark);
+  background: var(--gold-pale);
+  border: 1px solid var(--border-gold);
+  padding: 0.25rem 0.6rem;
+  letter-spacing: 0.03em;
+}
+
+.product-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-gold);
+  padding-top: 1.2rem;
+}
+
+.product-card__volume {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-mid);
+  letter-spacing: 0.05em;
+}
+
+.product-card__btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.2rem;
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  color: var(--gold-dark);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product-card__btn:hover {
+  background: var(--gold-gradient);
+  color: var(--white);
+  border-color: transparent;
+  box-shadow: var(--shadow-gold);
+}
+
+@media (max-width: 1000px) {
+  .products__grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .products__grid { grid-template-columns: 1fr; max-width: 420px; }
+}

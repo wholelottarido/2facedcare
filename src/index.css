@@ -1,13 +1,85 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ===== GLOBAL STYLES – Two Faced Beauty Care ===== */
+:root {
+  --gold: #C9A96E;
+  --gold-dark: #A07840;
+  --gold-light: #E8D5A3;
+  --gold-pale: #F7EDD8;
+  --gold-gradient: linear-gradient(135deg, #A07840 0%, #C9A96E 40%, #F0D898 60%, #C9A96E 80%, #A07840 100%);
+  --gold-gradient-simple: linear-gradient(135deg, #C9A96E, #F0D070, #C9A96E);
+  --white: #FFFFFF;
+  --off-white: #FAF8F5;
+  --cream: #F5EFE6;
+  --dark: #1A1509;
+  --text-dark: #2C2410;
+  --text-mid: #5C4A28;
+  --text-light: #8A7055;
+  --border-gold: rgba(201, 169, 110, 0.3);
+  --shadow-gold: 0 8px 32px rgba(160, 120, 64, 0.2);
+  --shadow-deep: 0 20px 60px rgba(0, 0, 0, 0.12);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--white);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.gold-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--gold-gradient-simple);
+  margin: 0 auto 1.5rem;
+}
+
+.section-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+::selection { background: var(--gold-pale); color: var(--text-dark); }
